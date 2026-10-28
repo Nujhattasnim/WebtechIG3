@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User Reg - PCMS</title>
+        <title>Admin Registration - PCMS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
+
     <body>
-        <a><img src="../images/logo.png" width="150px" alt="PCMS logo"></a>
+
+        <header>
+            <a href="../commonui/homepage.html">
+                <img src="../images/logo.png" alt="PCMS Logo">
+            </a>
+
+            <h2 id="page-title">Prison Cell Management System</h2>
+        </header>
+
+        <nav class="navbar">
+            <a href="../commonui/homepage.html">Home</a>
+            <a href="../commonui/login.html">Login</a>
+        </nav>
+
         <h2>User Registration Form</h2>
+
         <form action="submit.html" method="POST">
+
             <fieldset>
                 <legend>Existing User Verification</legend>
+
                 <table>
                     <tr>
-                        <td>Search Existing User:</td>
                         <td>
-                            <input type="search" id="search_employee" name="search_emp" placeholder="Enter Employee username">
+                            <label for="search_employee">Search Existing User:</label>
+                        </td>
+                        <td>
+                            <input type="search" id="search_employee"
+                                name="search_emp"
+                                placeholder="Enter employee username">
                         </td>
                         <td>
                             <input type="button" value="Check User">
@@ -21,34 +44,55 @@
                     </tr>
                 </table>
             </fieldset>
-            <br>
+
             <fieldset>
                 <legend>Account Information</legend>
+
                 <table>
                     <tr>
-                        <td>Username:</td>
                         <td>
-                            <input type="text" id="user_name" name="user" placeholder="Enter username">
+                            <label for="user_name">Username:</label>
                         </td>
-                        <td>Email address:</td>
                         <td>
-                            <input type="email" id="user_email" name="email" placeholder="example@gmail.com">
+                            <input type="text" id="user_name" name="user"
+                                placeholder="Enter username">
                         </td>
-                    </tr>
-                    <tr>
-                        <td>Password:</td>
                         <td>
-                            <input type="password" id="user_pass" name="pass" placeholder="Enter password">
+                            <label for="user_email">Email Address:</label>
                         </td>
-                        <td>Confirm Password:</td>
                         <td>
-                            <input type="password" id="confirm_password" name="confirm_pass" placeholder="Re-enter password">
+                            <input type="email" id="user_email" name="email"
+                                placeholder="example@gmail.com">
                         </td>
                     </tr>
+
                     <tr>
-                        <td>User Role:</td>
                         <td>
-                            <input list="role_options" name="user_role">
+                            <label for="user_pass">Password:</label>
+                        </td>
+                        <td>
+                            <input type="password" id="user_pass" name="pass"
+                                placeholder="Enter password">
+                        </td>
+                        <td>
+                            <label for="confirm_password">Confirm Password:</label>
+                        </td>
+                        <td>
+                            <input type="password" id="confirm_password"
+                                name="confirm_pass"
+                                placeholder="Re-enter password">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="user_role">User Role:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="user_role" name="user_role"
+                                list="role_options"
+                                placeholder="Select user role">
+
                             <datalist id="role_options">
                                 <option value="Admin">
                                 <option value="Jailer">
@@ -56,7 +100,9 @@
                                 <option value="Visitor Manager">
                             </datalist>
                         </td>
-                        <td>Account Status:</td>
+                        <td>
+                            <label for="status_options">Account Status:</label>
+                        </td>
                         <td>
                             <select id="status_options" name="account_status">
                                 <option value="active">Active</option>
@@ -66,39 +112,57 @@
                     </tr>
                 </table>
             </fieldset>
-            <br>
+
             <fieldset>
                 <legend>Employment Information</legend>
+
                 <table>
                     <tr>
-                        <td>Employee ID:</td>
                         <td>
-                            <input type="text" id="employee_id" name="emp_id" placeholder="Enter employee ID">
+                            <label for="employee_id">Employee ID:</label>
                         </td>
-                        <td>Department:</td>
+                        <td>
+                            <input type="text" id="employee_id" name="emp_id"
+                                placeholder="Enter employee ID">
+                        </td>
+                        <td>
+                            <label for="department_options">Department:</label>
+                        </td>
                         <td>
                             <select id="department_options" name="dept">
-                                <option value="admin">Adminstration</option>
+                                <option value="admin">Administration</option>
                                 <option value="jailer">Jailer Operations</option>
                                 <option value="doctor">Medical Center</option>
                                 <option value="visitor">Visitor Management</option>
                             </select>
                         </td>
                     </tr>
+
                     <tr>
-                        <td>Designation:</td>
                         <td>
-                            <input type="text" id="designation" name="desig" placeholder="Enter designation">
+                            <label for="designation">Designation:</label>
                         </td>
-                        <td>Joining Date:</td>
+                        <td>
+                            <input type="text" id="designation" name="desig"
+                                placeholder="Enter designation">
+                        </td>
+                        <td>
+                            <label for="joining_date">Joining Date:</label>
+                        </td>
                         <td>
                             <input type="date" id="joining_date" name="join_date">
                         </td>
                     </tr>
+
                     <tr>
-                        <td>Work Experience:</td>
                         <td>
-                            <input list="experience_options" name="exp" placeholder="Select work experience">
+                            <label for="experience">Work Experience:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="experience" name="exp"
+                                list="experience_options"
+                                placeholder="Select work experience">
+
                             <datalist id="experience_options">
                                 <option value="Less than 1 Year">
                                 <option value="1-3 Years">
@@ -107,98 +171,165 @@
                             </datalist>
                         </td>
                     </tr>
+
                     <tr>
                         <td>Working Hours:</td>
                         <td>
-                            Start: <input type="time" id="start_time" name="start_time">
-                            End: <input type="time" id="end_time" name="end_time">
+                            <label for="start_time">Start:</label>
+                            <input type="time" id="start_time" name="start_time">
+
+                            <label for="end_time">End:</label>
+                            <input type="time" id="end_time" name="end_time">
                         </td>
                     </tr>
                 </table>
             </fieldset>
-            <br>
+
             <fieldset>
-                <legend>Personal & Contact Details</legend>
+                <legend>Personal and Contact Details</legend>
+
                 <table>
                     <tr>
-                        <td>Full Name:</td>
                         <td>
-                            <input type="text" id="fullname" name="name" placeholder="Enter full name">
+                            <label for="fullname">Full Name:</label>
                         </td>
-                        <td>Phone Number:</td>
                         <td>
-                            <input type="tel" id="user_phone" name="phone" placeholder="01XXXXXXXXX">
+                            <input type="text" id="fullname" name="name"
+                                placeholder="Enter full name">
+                        </td>
+                        <td>
+                            <label for="user_phone">Phone Number:</label>
+                        </td>
+                        <td>
+                            <input type="tel" id="user_phone" name="phone"
+                                placeholder="01XXXXXXXXX">
                         </td>
                     </tr>
+
                     <tr>
                         <td>Gender:</td>
                         <td>
-                            <input type="radio" id="gender_m" name="gender" value="male">Male
-                            <input type="radio" id="gender_f" name="gender" value="female">Female
+                            <input type="radio" id="gender_m" name="gender"
+                                value="male">
+                            <label for="gender_m">Male</label>
+
+                            <input type="radio" id="gender_f" name="gender"
+                                value="female">
+                            <label for="gender_f">Female</label>
                         </td>
-                        <td>Date of Birth:</td>
+                        <td>
+                            <label for="date_of_birth">Date of Birth:</label>
+                        </td>
                         <td>
                             <input type="date" id="date_of_birth" name="dob">
                         </td>
                     </tr>
+
                     <tr>
-                        <td>Permanent Address:</td>
                         <td>
-                            <textarea id="address" name="addr" rows="3" cols="30" placeholder="Enter permanent address"></textarea>
+                            <label for="address">Permanent Address:</label>
+                        </td>
+                        <td colspan="3">
+                            <textarea id="address" name="addr" rows="3"
+                                    placeholder="Enter permanent address"></textarea>
                         </td>
                     </tr>
                 </table>
             </fieldset>
-            <br>
+
             <fieldset>
-                <legend>Identity & Account Verification</legend>
+                <legend>Identity and Account Verification</legend>
+
                 <table>
                     <tr>
-                        <td>NID Number:</td>
                         <td>
-                            <input type="text" id="identity_number" name="nid" placeholder="Enter NID number">
+                            <label for="identity_number">NID Number:</label>
                         </td>
-                        <td>Identity Document:</td>
+                        <td>
+                            <input type="text" id="identity_number" name="nid"
+                                placeholder="Enter NID number">
+                        </td>
+                        <td>
+                            <label for="identity_document">Identity Document:</label>
+                        </td>
                         <td>
                             <input type="file" id="identity_document" name="id_doc">
                         </td>
                     </tr>
+
                     <tr>
-                        <td>Profile Picture:</td>
+                        <td>
+                            <label for="profile_photo">Profile Picture:</label>
+                        </td>
                         <td>
                             <input type="file" id="profile_photo" name="pfp">
                         </td>
-                        <td>Account Creation Date & Time:</td>
                         <td>
-                            <input type="datetime-local" id="account_creation_datetime" name="creation_datetime">
+                            <label for="account_creation_datetime">
+                                Account Creation Date and Time:
+                            </label>
+                        </td>
+                        <td>
+                            <input type="datetime-local"
+                                id="account_creation_datetime"
+                                name="creation_datetime">
                         </td>
                     </tr>
                 </table>
             </fieldset>
+
             <fieldset>
-            <legend>Confirmation</legend>
-            <table>
-                <tr>
-                    <td>
-                        <input type="checkbox" id="information_verified" name="info_verify" value="yes">
-                    </td>
-                    <td>I confirm that all the information provided in this form is accurate.</td>
-                </tr>
-            </table>
+                <legend>Confirmation</legend>
+
+                <table>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="information_verified"
+                                name="info_verify" value="yes">
+                        </td>
+                        <td>
+                            <label for="information_verified">
+                                I confirm that all the information provided
+                                in this form is accurate.
+                            </label>
+                        </td>
+                    </tr>
+                </table>
             </fieldset>
-            <br>
-            <fieldset>
-                <legend>Navigation</legend>
-                <p>
-                    <a href="../commonui/homepage.html">Homepage</a>
-                    <a href="../commonui/login.html">Login Page</a>
-                </p>
-            </fieldset>
-            <br>
-            <center>
+
+            <div class="form-buttons">
                 <input type="submit" value="Register User">
                 <input type="reset" value="Clear Form">
-            </center>
+            </div>
+
         </form>
+
+        <footer>
+            <p><b>Prison Cell Management System (PCMS)</b></p>
+            <p>Organized Records | Efficient Management | Secure Access</p>
+        </footer>
+
+        <div class="help-widget">
+            <button type="button" class="help-button">
+                Help
+            </button>
+
+            <div class="help-panel">
+                <h3>PCMS Help</h3>
+
+                <p>How can I use this page?</p>
+
+                <ul>
+                    <li>Enter the existing user's username to check their details.</li>
+                    <li>Fill in the account information and select the appropriate role.</li>
+                    <li>Enter the employee's employment and personal details.</li>
+                    <li>Provide the identity details and upload the required documents.</li>
+                    <li>Confirm that the information is accurate, then click Register User.</li>
+                    <li>Click Clear Form to reset the fields.</li>
+                    <li>Use Home or Login in the navigation bar to visit another page.</li>
+                </ul>
+            </div>
+        </div>
+
     </body>
 </html>
